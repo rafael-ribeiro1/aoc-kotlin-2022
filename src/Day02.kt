@@ -1,12 +1,12 @@
 fun main() {
     fun part1(input: List<String>): Int {
         return input.gameRounds { GameRound.StrategyGuide1(it[0], it[1]) }
-            .fold(0) { total, item -> total + item.calculateScore() }
+            .sumOf { it.calculateScore() }
     }
 
     fun part2(input: List<String>): Int {
         return input.gameRounds { GameRound.StrategyGuide2(it[0], it[1]) }
-            .fold(0) { total, item -> total + item.calculateScore() }
+            .sumOf { it.calculateScore() }
     }
 
     // test if implementation meets criteria from the description, like:
